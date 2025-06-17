@@ -2,10 +2,15 @@
 <html lang="es">
 
 <head>
+    <link rel="stylesheet" href="bootstrap.css">
+    
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icon-192x192.png">
+    <meta name="theme-color" content="#000000">
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>menu</title>
-    <link rel="stylesheet" href="bootstrap.css">
 </head>
 
 <body class="bg-dark">
@@ -95,6 +100,15 @@
 
     </footer>
     <script type="module" src="bootstrap.js"></script>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("/service-worker.js")
+                .then(() => console.log("Service Worker registrado"))
+                .catch(err => console.error("Error registrando el Service Worker:", err));
+        }
+    </script>
+    
 </body>
 
 </html>
